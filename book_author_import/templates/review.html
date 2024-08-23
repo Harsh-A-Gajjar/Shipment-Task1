@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Review Uploaded File</h1>
+        <div class="table-container">
+            {{ data|safe }}
+        </div>
+        <form action="{{ url_for('confirm_upload') }}" method="post">
+            <button type="submit">Confirm and Save</button>
+        </form>
+        <a href="{{ url_for('index') }}">Upload another file</a>
+    </div>
+</body>
+</html>
